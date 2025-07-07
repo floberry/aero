@@ -89,6 +89,13 @@
                 rgba(118, 75, 162, 0.1) 100%);
         }
 
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0;
+        }
+
         .card-title {
             padding: 8px;
             text-align: center;
@@ -150,13 +157,17 @@
         </div>
 
         <!-- 물리 시뮬레이션들 -->
-<div class="sim-card" onclick="openExternalLink('https://claude.ai/public/artifacts/137efc13-3e33-41ab-bd9c-f36df527314a?authuser=0')">
-    <div class="card-image">
-        <img src="./thumbnails/sim01.png" alt="3501 강지율" style="width: 100%; height: 100%; object-fit: cover;">
-    <div class="card-title">3501 강지율</div>
-</div>
+        <div class="sim-card" onclick="openExternalLink('https://claude.ai/public/artifacts/137efc13-3e33-41ab-bd9c-f36df527314a?authuser=0')">
+            <div class="card-image">
+                <img src="thumbnails/sim01.png" alt="3501 강지율">
+            </div>
+            <div class="card-title">3501 강지율</div>
+        </div>
 
-
+        <div class="sim-card" onclick="openExternalLink('https://claude.ai/public/artifacts/cb9b9b96-6a31-4c79-a658-86946b08b53e?authuser=0')">
+            <div class="card-image">⚡</div>
+            <div class="card-title">전기장 시각화</div>
+        </div>
 
         <div class="sim-card" onclick="openSimulation('sim03')">
             <div class="card-image">🌍</div>
@@ -184,11 +195,11 @@
         </div>
 
         <div class="sim-card" onclick="openSimulation('sim08')">
-    <div class="card-image">
-        <img src="./thumbnails/sim08.png" alt="3508 백세빈" style="width: 100%; height: 100%; object-fit: cover;">
-    </div>
-    <div class="card-title">3508 백세빈</div>
-</div>
+            <div class="card-image">
+                <img src="thumbnails/sim08.png" alt="3508 백세빈">
+            </div>
+            <div class="card-title">3508 백세빈</div>
+        </div>
 
         <div class="sim-card" onclick="openSimulation('sim09')">
             <div class="card-image">🧲</div>
@@ -297,17 +308,18 @@
     </div>
 
     <script>
-function openExternalLink(url) {
-    window.open(url, '_blank');
-}
+        function openExternalLink(url) {
+            window.open(url, '_blank');
+        }
 
-function openSimulation(simId) {
-    if (simId === 'info') {
-        window.location.href = './info/index.html';
-    } else {
-        window.location.href = `./simulations/${simId}/index.html`;
-    }
-}
+        function openSimulation(simId) {
+            if (simId === 'info') {
+                window.location.href = './info/index.html';
+            } else {
+                window.location.href = `./simulations/${simId}/index.html`;
+            }
+        }
+
         // 터치 피드백 개선
         document.querySelectorAll('.sim-card').forEach(card => {
             card.addEventListener('touchstart', function() {
